@@ -12,7 +12,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const profile = await getCurrentProfile();
+  const rawProfile = await getCurrentProfile();
+  const profile = rawProfile as any; // отключаем строгие типы здесь
 
   return (
     <html lang="lv">
@@ -46,7 +47,9 @@ export default async function RootLayout({
               )}
               {profile && (
                 <>
-                  <span className="text-sm">Sveiki, {profile.username}</span>
+                  <span className="text-sm">
+                    Sveiki, {profile.username}
+                  </span>
                   <Link href="/profile">Profils</Link>
                   <form action="/logout" method="post">
                     <button className="text-sm text-red-600">

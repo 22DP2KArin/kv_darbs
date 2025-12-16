@@ -2,18 +2,31 @@ import { createServerSupabase } from "@/lib/supabase/server";
 
 export async function generateGiftIdeas(userId: string) {
   const supabase = createServerSupabase();
-  const { data: profile } = await supabase
+  const anySupabase: any = supabase;
+
+  // профиль без строгих типов
+  const { data: profileData } = await anySupabase
     .from("profiles")
     .select("interests, hobbies")
     .eq("id", userId)
     .single();
 
-  if (!profile) return [];
+  const profile: any = profileData ?? {};
+  const interests = profile.interests ?? [];
+  const hobbies = profile.hobbies ?? [];
 
-  const { data } = await supabase.rpc("get_recommended_gifts", {
-    p_interests: profile.interests ?? [],
-    p_hobbies: profile.hobbies ?? []
-  });
+  // вызов RPC без строгих типов
+  const { data: giftsData, error } = await anySupabase.rpc(
+    "get_recommended_gifts",
+    {
+      p_interests: interests,
+      p_hobbies: hobbies
+    }
+  );
 
-  return data ?? [];
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return (giftsData ?? []) as any[];
 }

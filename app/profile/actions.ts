@@ -15,23 +15,34 @@ export async function updateProfile(formData: FormData) {
   const file = formData.get("avatar") as File | null;
   if (file && file.size > 0) {
     const path = `${user.id}/${file.name}`;
-    const { data, error } = await supabase.storage
+    const uploadResult: any = await supabase.storage
       .from("avatars")
       .upload(path, file, { upsert: true });
-    if (!error) {
-      const { data: urlData } = supabase.storage
+
+    if (!uploadResult.error) {
+      const urlData: any = supabase.storage
         .from("avatars")
         .getPublicUrl(path);
-      avatar_url = urlData.publicUrl;
+      avatar_url = urlData.data.publicUrl;
     }
   }
 
   const updateData: any = {
     username,
-    interests: interests ? interests.split(",").map(s => s.trim()) : [],
-    hobbies: hobbies ? hobbies.split(",").map(s => s.trim()) : []
+    interests: interests ? interests.split(",").map((s) => s.trim()) : [],
+    hobbies: hobbies ? hobbies.split(",").map((s) => s.trim()) : []
   };
   if (avatar_url) updateData.avatar_url = avatar_url;
 
-  await supabase.from("profiles").update(updateData).eq("id", user.id);
+  // вообще убираем generic-типы у supabase
+  const anySupabase: any = supabase;
+
+  const { error } = await anySupabase
+    .from("profiles")
+    .update(updateData)
+    .eq("id", user.id);
+
+  if (error) {
+    throw new Error(error.message);
+  }
 }

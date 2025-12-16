@@ -11,7 +11,7 @@ export async function getCurrentProfile() {
   if (!user) return null;
   const supabase = createServerSupabase();
   const { data } = await supabase
-    .from("profiles")
+    .from("profiles" as any)
     .select("*")
     .eq("id", user.id)
     .single();
@@ -25,7 +25,9 @@ export async function requireAuth() {
 }
 
 export async function requireRole(roles: ("user" | "admin")[]) {
-  const profile = await getCurrentProfile();
+  const rawProfile = await getCurrentProfile();
+  const profile = rawProfile as any;
+
   if (!profile || !roles.includes(profile.role)) {
     throw new Error("Forbidden");
   }

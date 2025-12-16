@@ -11,11 +11,13 @@ type Props = {
 
 export default async function GiftCatalog({ searchParams }: Props) {
   const supabase = createServerSupabase();
+  const anySupabase: any = supabase;
+
   const q = searchParams?.q ?? "";
   const min = searchParams?.min;
   const max = searchParams?.max;
 
-  let query = supabase.from("gifts").select("*");
+  let query = anySupabase.from("gifts").select("*");
 
   if (q) {
     query = query.ilike("title", `%${q}%`);
@@ -28,11 +30,12 @@ export default async function GiftCatalog({ searchParams }: Props) {
   }
 
   const { data } = await query.order("created_at", { ascending: false });
-  const gifts = data ?? [];
+
+  const gifts = (data ?? []) as any[];
 
   return (
     <div className="grid gap-4 md:grid-cols-3">
-      {gifts.map(gift => (
+      {gifts.map((gift) => (
         <GiftCard
           key={gift.id}
           id={gift.id}

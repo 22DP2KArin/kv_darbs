@@ -3,15 +3,20 @@ import GiftCard from "@/components/GiftCard";
 import { requireAuth } from "@/lib/auth";
 import { addToWishlist } from "./actions";
 
-type Props = { params: { id: string } };
+type PageProps = {
+  params: { id: string };
+};
 
-export default async function GiftDetailsPage({ params }: Props) {
+export default async function GiftDetailsPage({ params }: PageProps) {
   const supabase = createServerSupabase();
-  const { data: gift } = await supabase
-    .from("gifts")
+
+  const { data } = await supabase
+    .from("gifts" as any)
     .select("*")
     .eq("id", Number(params.id))
     .single();
+
+  const gift = data as any;
 
   if (!gift) {
     return <div>Nav atrasta dāvana.</div>;

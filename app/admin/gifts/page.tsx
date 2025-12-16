@@ -12,12 +12,24 @@ export default async function AdminGiftsPage() {
       ascending: false
     });
 
+  const list = (gifts ?? []) as {
+    id: number;
+    title: string;
+    price: number;
+  }[];
+
   return (
     <main className="space-y-4">
       <h1 className="text-2xl font-bold">Dāvanu pārvaldība</h1>
+
       <form action={createGift} className="card space-y-2 max-w-lg">
         <h2 className="font-semibold">Pievienot dāvanu</h2>
-        <input name="title" className="input" placeholder="Nosaukums" required />
+        <input
+          name="title"
+          className="input"
+          placeholder="Nosaukums"
+          required
+        />
         <input
           name="price"
           type="number"
@@ -36,11 +48,15 @@ export default async function AdminGiftsPage() {
           Saglabāt
         </button>
       </form>
+
       <section className="card space-y-2">
         <h2 className="font-semibold">Esošās dāvanas</h2>
         <ul className="space-y-1 text-sm">
-          {(gifts ?? []).map(g => (
-            <li key={g.id} className="flex items-center justify-between">
+          {list.map(g => (
+            <li
+              key={g.id}
+              className="flex items-center justify-between"
+            >
               <span>
                 {g.title} – {g.price.toFixed(2)} €
               </span>

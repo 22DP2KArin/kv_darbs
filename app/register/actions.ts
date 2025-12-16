@@ -9,19 +9,29 @@ export async function signup(formData: FormData) {
   const username = String(formData.get("username"));
 
   const supabase = createServerSupabase();
+  const anySupabase: any = supabase;
 
-  const { data, error } = await supabase.auth.signUp({
+  const { data, error } = await anySupabase.auth.signUp({
     email,
     password
   });
+
   if (error || !data.user) {
     throw new Error("Neizdevās reģistrācija");
   }
 
-  await supabase.from("profiles").insert({
-    id: data.user.id,
-    username
-  });
+  const userId = data.user.id as string;
+
+  const { error: insertError } = await anySupabase
+    .from("profiles")
+    .insert({
+      id: userId,
+      username
+    });
+
+  if (insertError) {
+    throw new Error(insertError.message);
+  }
 
   redirect("/");
 }

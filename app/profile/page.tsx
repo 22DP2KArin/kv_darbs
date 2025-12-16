@@ -2,7 +2,9 @@ import { getCurrentProfile } from "@/lib/auth";
 import { updateProfile } from "./actions";
 
 export default async function ProfilePage() {
-  const profile = await getCurrentProfile();
+  const rawProfile = await getCurrentProfile();
+  const profile = rawProfile as any;
+
   if (!profile) return <div>Jāpiesakās sistēmā.</div>;
 
   return (
@@ -11,7 +13,11 @@ export default async function ProfilePage() {
       <form action={updateProfile} className="space-y-3">
         <div>
           <label className="block text-sm font-medium">Lietotājvārds</label>
-          <input className="input" name="username" defaultValue={profile.username} />
+          <input
+            className="input"
+            name="username"
+            defaultValue={profile.username}
+          />
         </div>
         <div>
           <label className="block text-sm font-medium">
