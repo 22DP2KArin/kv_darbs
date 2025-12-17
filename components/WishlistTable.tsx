@@ -2,7 +2,7 @@
 
 import { updateQuantityAction, removeItemAction } from "@/app/wishlist/actions";
 
-type Item = {
+export type Item = {
   id: number;
   quantity: number;
   gifts: {
@@ -12,14 +12,20 @@ type Item = {
   };
 };
 
-export default function WishlistTable({ items }: { items: Item[] }) {
+type Props = {
+  items: Item[];
+};
+
+export default function WishlistTable({ items }: Props) {
   async function inc(id: number, current: number) {
     await updateQuantityAction(id, current + 1);
   }
+
   async function dec(id: number, current: number) {
     if (current <= 1) return;
     await updateQuantityAction(id, current - 1);
   }
+
   async function remove(id: number) {
     await removeItemAction(id);
   }
@@ -35,7 +41,7 @@ export default function WishlistTable({ items }: { items: Item[] }) {
         </tr>
       </thead>
       <tbody>
-        {items.map(item => (
+        {items.map((item) => (
           <tr key={item.id} className="border-b">
             <td className="py-2">{item.gifts.title}</td>
             <td className="py-2">{item.gifts.price.toFixed(2)} €</td>
@@ -47,7 +53,10 @@ export default function WishlistTable({ items }: { items: Item[] }) {
               </div>
             </td>
             <td className="py-2 text-right">
-              <button className="text-red-600" onClick={() => remove(item.id)}>
+              <button
+                className="text-red-600"
+                onClick={() => remove(item.id)}
+              >
                 Dzēst
               </button>
             </td>

@@ -13,7 +13,7 @@ export async function signup(formData: FormData) {
 
   const { data, error } = await supabase.auth.signUp({
     email,
-    password
+    password,
   });
 
   if (error || !data.user) {
@@ -26,13 +26,12 @@ export async function signup(formData: FormData) {
     .from("profiles")
     .insert({
       id: userId,
-      username
+      username,
     });
 
   if (insertError) {
     throw new Error(insertError.message);
   }
 
-  redirect("/");
+  redirect("/profile");
 }
-

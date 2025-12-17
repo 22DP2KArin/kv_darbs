@@ -5,9 +5,10 @@ import { requireAuth } from "@/lib/auth";
 
 export async function addFriendAction(formData: FormData) {
   const user = await requireAuth();
+
   const username = String(formData.get("username"));
 
-  const supabase = createServerSupabase();
+  const supabase = await createServerSupabase();
 
   const { data: profile, error: profileError } = await supabase
     .from("profiles" as any)
@@ -26,7 +27,7 @@ export async function addFriendAction(formData: FormData) {
     .upsert(
       {
         user_id: user.id,
-        friend_id: friendId
+        friend_id: friendId,
       } as any,
       { onConflict: "user_id,friend_id" }
     );
@@ -38,7 +39,8 @@ export async function addFriendAction(formData: FormData) {
 
 export async function removeFriendAction(friendId: string) {
   const user = await requireAuth();
-  const supabase = createServerSupabase();
+
+  const supabase = await createServerSupabase();
 
   const { error } = await supabase
     .from("friends" as any)

@@ -10,14 +10,18 @@ type ProfileForm = {
 };
 
 export async function getProfile() {
-  const supabase = createServerSupabase() as any;
+  const supabase = (await createServerSupabase()) as any;
 
   const {
     data: { user },
     error: userError,
   } = await supabase.auth.getUser();
 
-  if (userError || !user) return null;
+
+  if (userError || !user) {
+    throw new Error("Nav pieteicies");
+  
+  }
 
   const { data, error } = await supabase
     .from("profiles")
@@ -26,16 +30,18 @@ export async function getProfile() {
     .single();
 
   if (error) return null;
+
   return data;
 }
 
 export async function updateProfile(form: ProfileForm) {
-  const supabase = createServerSupabase() as any;
+  const supabase = (await createServerSupabase()) as any;
 
   const {
     data: { user },
     error: userError,
   } = await supabase.auth.getUser();
+
 
   if (userError || !user) {
     throw new Error("Nav pieteicies");
@@ -43,12 +49,12 @@ export async function updateProfile(form: ProfileForm) {
 
   const hobbiesArray = form.hobbies
     .split(",")
-    .map(s => s.trim())
+    .map((s) => s.trim())
     .filter(Boolean);
 
   const interestsArray = form.interests
     .split(",")
-    .map(s => s.trim())
+    .map((s) => s.trim())
     .filter(Boolean);
 
   const { error } = await supabase

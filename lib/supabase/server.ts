@@ -4,7 +4,6 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import type { Database } from "@/types/db";
 
 export async function createServerSupabase() {
-  // именно await cookies()
   const cookieStore = await cookies();
 
   const supabase = createServerClient<Database>(
@@ -13,11 +12,22 @@ export async function createServerSupabase() {
     {
       cookies: {
         get(name: string) {
-          const store: any = cookieStore;
-          return store.get(name)?.value;
+          return cookieStore.get(name)?.value;
         },
-        set(_name: string, _value: string, _options: CookieOptions) {},
-        remove(_name: string, _options: CookieOptions) {},
+        set(name: string, value: string, options: CookieOptions) {
+          cookieStore.set({
+            name,
+            value,
+            ...options,
+          });
+        },
+        remove(name: string, options: CookieOptions) {
+          cookieStore.set({
+            name,
+            value: "",
+            ...options,
+          });
+        },
       },
     }
   );

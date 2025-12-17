@@ -7,7 +7,7 @@ export async function loginAction(formData: FormData) {
   const email = String(formData.get("email"));
   const password = String(formData.get("password"));
 
-const supabase = await createServerSupabase();
+  const supabase = await createServerSupabase();
 
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
@@ -15,9 +15,11 @@ const supabase = await createServerSupabase();
   });
 
   if (error) {
-    console.error("LOGIN ERROR", error); // временно
-    throw new Error(error.message);      // покажем реальный текст
+    console.error("LOGIN ERROR", error);
+    throw new Error(error.message);
   }
 
-  redirect("/");
+  console.log("LOGIN OK", data); 
+
+  redirect("/profile");
 }

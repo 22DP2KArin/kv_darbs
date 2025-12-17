@@ -1,7 +1,9 @@
 {
+  "/logout/route": "app/logout/route.js",
+  "/wishlist/page": "app/wishlist/page.js",
+  "/friends/page": "app/friends/page.js",
+  "/gifts/[id]/page": "app/gifts/[id]/page.js",
+  "/profile/page": "app/profile/page.js",
   "/page": "app/page.js",
-  "/register/page": "app/register/page.js",
-  "/gifts/page": "app/gifts/page.js",
-  "/login/page": "app/login/page.js",
-  "/gifts/[id]/page": "app/gifts/[id]/page.js"
+  "/gifts/page": "app/gifts/page.js"
 }
