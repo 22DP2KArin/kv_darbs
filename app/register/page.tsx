@@ -5,17 +5,21 @@ import { signup } from "./actions";
 
 export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     const formData = new FormData(e.currentTarget);
-    await signup(formData);
-    setLoading(false);
+    try {
+      await signup(formData);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <main className="mx-auto max-w-md space-y-4">
-      <h1 className="text-2xl font-bold">Reģistrācija</h1>
+      <h1 className="text-2xl font-bold text-purple-700">Reģistrācija</h1>
       <form onSubmit={onSubmit} className="space-y-3">
         <input className="input" name="email" type="email" required placeholder="E-pasts" />
         <input className="input" name="password" type="password" required placeholder="Parole" />

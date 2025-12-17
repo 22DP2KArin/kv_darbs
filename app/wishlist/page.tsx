@@ -12,7 +12,7 @@ export default async function WishlistPage() {
 
   return (
     <main className="space-y-4">
-      <h1 className="text-2xl font-bold">Mans vēlmju saraksts</h1>
+      <h1 className="text-3xl font-bold text-purple-700">Dāvanu katalogs</h1>
       <WishlistTable items={(data as any[]) ?? []} />
     </main>
   );

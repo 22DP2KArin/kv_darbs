@@ -10,13 +10,16 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
     const fd = new FormData(e.currentTarget);
-    await loginAction(fd);
-    setLoading(false);
+    try {
+      await loginAction(fd);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <main className="mx-auto max-w-md space-y-4">
-      <h1 className="text-2xl font-bold">Pieteikšanās</h1>
+      <h1 className="text-2xl font-bold text-purple-700">Pieteikšanās</h1>
       <form onSubmit={onSubmit} className="space-y-3">
         <input className="input" name="email" type="email" required placeholder="E-pasts" />
         <input className="input" name="password" type="password" required placeholder="Parole" />

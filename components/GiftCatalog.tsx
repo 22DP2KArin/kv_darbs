@@ -1,50 +1,57 @@
+// components/GiftCatalog.tsx
 import { createServerSupabase } from "@/lib/supabase/server";
-import GiftCard from "./GiftCard";
+import GiftCard from "@/components/GiftCard";
+import Link from "next/link";
 
-type Props = {
+type GiftCatalogProps = {
   searchParams?: {
     q?: string;
-    min?: string;
     max?: string;
   };
 };
 
-export default async function GiftCatalog({ searchParams }: Props) {
-  const supabase = createServerSupabase();
-  const anySupabase: any = supabase;
+export default async function GiftCatalog({ searchParams }: GiftCatalogProps) {
+  const supabase = await createServerSupabase();
 
   const q = searchParams?.q ?? "";
-  const min = searchParams?.min;
   const max = searchParams?.max;
 
-  let query = anySupabase.from("gifts").select("*");
+  let query = supabase.from("gifts").select("*");
 
   if (q) {
     query = query.ilike("title", `%${q}%`);
   }
-  if (min) {
-    query = query.gte("price", Number(min));
-  }
+
   if (max) {
     query = query.lte("price", Number(max));
   }
 
-  const { data } = await query.order("created_at", { ascending: false });
+  const { data, error } = await query;
 
-  const gifts = (data ?? []) as any[];
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const gifts = data ?? [];
 
   return (
     <div className="grid gap-4 md:grid-cols-3">
-      {gifts.map((gift) => (
-        <GiftCard
-          key={gift.id}
-          id={gift.id}
-          title={gift.title}
-          price={gift.price}
-          description={gift.description}
-          image_url={gift.image_url ?? undefined}
-          showDetailsLink
-        />
+      {gifts.map((gift: any) => (
+        <div key={gift.id} className="space-y-2">
+          <GiftCard
+            id={gift.id}
+            title={gift.title}
+            price={gift.price}
+            description={gift.description}
+            image_url={gift.image_url ?? undefined}
+          />
+          <Link
+            href={`/gifts/${gift.id}`}
+            className="btn-secondary mt-2 inline-block"
+          >
+            Skatīt detalizēti
+          </Link>
+        </div>
       ))}
     </div>
   );

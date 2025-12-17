@@ -7,10 +7,17 @@ export async function loginAction(formData: FormData) {
   const email = String(formData.get("email"));
   const password = String(formData.get("password"));
 
-  const supabase = createServerSupabase();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+const supabase = await createServerSupabase();
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
   if (error) {
-    throw new Error("Nepareizs e-pasts vai parole");
+    console.error("LOGIN ERROR", error); // временно
+    throw new Error(error.message);      // покажем реальный текст
   }
+
   redirect("/");
 }

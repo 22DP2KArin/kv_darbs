@@ -4,16 +4,18 @@ import { requireAuth } from "@/lib/auth";
 import { addToWishlist } from "./actions";
 
 type PageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function GiftDetailsPage({ params }: PageProps) {
-  const supabase = createServerSupabase();
+  const { id } = await params; // <-- ждём params
+
+  const supabase = await createServerSupabase();
 
   const { data } = await supabase
     .from("gifts" as any)
     .select("*")
-    .eq("id", Number(params.id))
+    .eq("id", Number(id))
     .single();
 
   const gift = data as any;

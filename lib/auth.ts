@@ -1,35 +1,53 @@
+// lib/auth.ts
+import { redirect } from "next/navigation";
 import { createServerSupabase } from "@/lib/supabase/server";
+import type { Database } from "@/types/db";
+
+export type SessionUser = Database["public"]["Tables"]["profiles"]["Row"] | null;
 
 export async function getSessionUser() {
-  const supabase = createServerSupabase();
-  const { data } = await supabase.auth.getUser();
-  return data.user ?? null;
-}
+  const supabase = await createServerSupabase();
 
-export async function getCurrentProfile() {
-  const user = await getSessionUser();
-  if (!user) return null;
-  const supabase = createServerSupabase();
-  const { data } = await supabase
-    .from("profiles" as any)
-    .select("*")
-    .eq("id", user.id)
-    .single();
-  return data ?? null;
-}
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-export async function requireAuth() {
-  const user = await getSessionUser();
-  if (!user) throw new Error("Unauthorized");
   return user;
 }
 
-export async function requireRole(roles: ("user" | "admin")[]) {
-  const rawProfile = await getCurrentProfile();
-  const profile = rawProfile as any;
+export async function getCurrentProfile() {
+  const supabase = await createServerSupabase();
 
-  if (!profile || !roles.includes(profile.role)) {
-    throw new Error("Forbidden");
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return null;
+
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(error.message);
   }
-  return profile;
+
+  return data;
 }
+
+export async function requireAuth() {
+  const supabase = await createServerSupabase();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/login");
+  }
+
+  return user;
+}
+

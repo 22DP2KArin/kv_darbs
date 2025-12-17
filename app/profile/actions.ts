@@ -1,45 +1,64 @@
 "use server";
 
 import { createServerSupabase } from "@/lib/supabase/server";
-import { requireAuth } from "@/lib/auth";
 
-export async function updateProfile(formData: FormData) {
-  const user = await requireAuth();
-  const username = String(formData.get("username"));
-  const interests = String(formData.get("interests") ?? "");
-  const hobbies = String(formData.get("hobbies") ?? "");
+type ProfileForm = {
+  username: string;
+  avatarUrl: string;
+  hobbies: string;
+  interests: string;
+};
 
-  const supabase = createServerSupabase();
+export async function getProfile() {
+  const supabase = createServerSupabase() as any;
 
-  let avatar_url: string | undefined;
-  const file = formData.get("avatar") as File | null;
-  if (file && file.size > 0) {
-    const path = `${user.id}/${file.name}`;
-    const uploadResult: any = await supabase.storage
-      .from("avatars")
-      .upload(path, file, { upsert: true });
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
 
-    if (!uploadResult.error) {
-      const urlData: any = supabase.storage
-        .from("avatars")
-        .getPublicUrl(path);
-      avatar_url = urlData.data.publicUrl;
-    }
+  if (userError || !user) return null;
+
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+  if (error) return null;
+  return data;
+}
+
+export async function updateProfile(form: ProfileForm) {
+  const supabase = createServerSupabase() as any;
+
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError || !user) {
+    throw new Error("Nav pieteicies");
   }
 
-  const updateData: any = {
-    username,
-    interests: interests ? interests.split(",").map((s) => s.trim()) : [],
-    hobbies: hobbies ? hobbies.split(",").map((s) => s.trim()) : []
-  };
-  if (avatar_url) updateData.avatar_url = avatar_url;
+  const hobbiesArray = form.hobbies
+    .split(",")
+    .map(s => s.trim())
+    .filter(Boolean);
 
-  // вообще убираем generic-типы у supabase
-  const anySupabase: any = supabase;
+  const interestsArray = form.interests
+    .split(",")
+    .map(s => s.trim())
+    .filter(Boolean);
 
-  const { error } = await anySupabase
+  const { error } = await supabase
     .from("profiles")
-    .update(updateData)
+    .update({
+      username: form.username,
+      avatar_url: form.avatarUrl.trim() || null,
+      hobbies: hobbiesArray,
+      interests: interestsArray,
+    })
     .eq("id", user.id);
 
   if (error) {

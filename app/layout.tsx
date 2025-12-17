@@ -18,7 +18,7 @@ export default async function RootLayout({
   return (
     <html lang="lv">
       <body className="min-h-screen">
-        <header className="border-b bg-white">
+        <header className="border-b border-purple-100 bg-white/80 backdrop-blur">
           <nav className="mx-auto flex max-w-6xl items-center justify-between p-4">
             <div className="flex items-center gap-4">
               <Link href="/" className="font-semibold">
