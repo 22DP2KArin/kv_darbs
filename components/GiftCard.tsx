@@ -17,22 +17,37 @@ export default function GiftCard({
   image_url,
 }: GiftCardProps) {
   return (
-    <div className="card space-y-2">
-      {image_url && (
+    <article className="flex h-full flex-col rounded-lg border bg-white shadow-sm">
+      <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
         <img
-          src={image_url}
+          src={image_url ?? "/placeholder.png"}
           alt={title}
-          className="h-40 w-full rounded object-cover"
+          className="h-full w-full object-cover"
         />
-      )}
+      </div>
 
-      <h2 className="font-semibold">{title}</h2>
+      <div className="flex flex-1 flex-col p-4">
+        <h2 className="line-clamp-2 text-lg font-semibold">{title}</h2>
 
-      {price != null && <p className="text-sm text-slate-700">{price} €</p>}
+        {price != null && (
+          <p className="mt-1 text-sm text-slate-700">{price} €</p>
+        )}
 
-      {description && (
-        <p className="text-sm text-slate-600 line-clamp-2">{description}</p>
-      )}
-    </div>
+        {description && (
+          <p className="mt-2 line-clamp-3 text-sm text-slate-600">
+            {description}
+          </p>
+        )}
+
+        <div className="mt-auto pt-3">
+          <Link
+            href={`/gifts/${id}`}
+            className="btn-secondary inline-block w-full text-center"
+          >
+            Skatīt detalizēti
+          </Link>
+        </div>
+      </div>
+    </article>
   );
 }

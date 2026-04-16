@@ -1,41 +1,36 @@
+// app/wishlist/page.tsx
 import { createServerSupabase } from "@/lib/supabase/server";
-import { requireAuth } from "@/lib/auth";
-import WishlistTable, { Item } from "@/components/WishlistTable";
+import { WishlistClient } from "./WishlistClient";
+
+type WishlistItemRow = {
+  id: number;
+  gift_id: number;
+  quantity: number;
+  gifts: {
+    id: number;
+    title: string;
+    price: number | null;
+    image_url: string | null;
+  } | null;
+};
 
 export default async function WishlistPage() {
-  const user = await requireAuth();
-
   const supabase = await createServerSupabase();
 
-  const { data } = await supabase
-    .from("wishlist_items")
-    .select("id, quantity, gifts(id, title, price)")
-    .eq("user_id", user.id);
+  const { data, error } = await supabase
+    .from("wishlist_items" as any)
+    .select("id, gift_id, quantity, gifts(id, title, price, image_url)");
 
-  const items: Item[] =
-    data
-      ?.map((row: any) => {
-        const rawGifts = row.gifts;
-        const g = Array.isArray(rawGifts) ? rawGifts[0] : rawGifts ?? null;
+  if (error) {
+    throw new Error(error.message);
+  }
 
-        if (!g) return null;
-
-        return {
-          id: Number(row.id),
-          quantity: Number(row.quantity),
-          gifts: {
-            id: Number(g.id),
-            title: String(g.title),
-            price: Number(g.price),
-          },
-        };
-      })
-      .filter(Boolean) as Item[] ?? [];
+  const wishlist = (data ?? []) as WishlistItemRow[];
 
   return (
-    <main className="mx-auto max-w-3xl space-y-4">
-      <h1 className="text-2xl font-bold text-purple-700">Dāvanu katalogs</h1>
-      <WishlistTable items={items} />
+    <main className="space-y-4">
+      <h1 className="text-2xl font-bold">Vēlmju saraksts</h1>
+      <WishlistClient initialItems={wishlist} />
     </main>
   );
 }

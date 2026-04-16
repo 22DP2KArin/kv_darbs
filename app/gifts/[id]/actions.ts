@@ -1,6 +1,6 @@
 "use server";
 
-import { createServerSupabase } from "@/lib/supabase/server";
+import { createServerSupabaseForActions } from "@/lib/supabase/server-actions";
 import { requireAuth } from "@/lib/auth";
 
 export async function addToWishlist(formData: FormData) {
@@ -8,7 +8,7 @@ export async function addToWishlist(formData: FormData) {
 
   const giftId = Number(formData.get("gift_id"));
 
-  const supabase = await createServerSupabase();
+  const supabase = await createServerSupabaseForActions();
 
   const { error } = await supabase
     .from("wishlist_items" as any)

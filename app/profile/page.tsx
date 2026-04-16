@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { updateProfile, getProfile } from "./actions";
+import { updateProfile, getProfile, type Profile } from "./actions";
 
 export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     (async () => {
-      const data = await getProfile();
+      const data: Profile | null = await getProfile();
       if (data) {
         setUsername(data.username ?? "");
         setAvatarUrl((data.avatar_url ?? "").trim());

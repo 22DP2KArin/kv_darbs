@@ -14,9 +14,14 @@ export default function LoginPage() {
 
     const fd = new FormData(e.currentTarget);
 
-    await loginAction(fd);
-
-    setLoading(false);
+    try {
+      await loginAction(fd);
+    } catch (err: any) {
+      console.error(err);
+      setError(err?.message ?? "Neizdevās pieteikties");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (

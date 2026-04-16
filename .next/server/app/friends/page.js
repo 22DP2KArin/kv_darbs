@@ -56,72 +56,6 @@ module.exports = require("next/dist/server/app-render/work-unit-async-storage.ex
 
 /***/ }),
 
-/***/ "buffer":
-/*!*************************!*\
-  !*** external "buffer" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("buffer");
-
-/***/ }),
-
-/***/ "crypto":
-/*!*************************!*\
-  !*** external "crypto" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("crypto");
-
-/***/ }),
-
-/***/ "events":
-/*!*************************!*\
-  !*** external "events" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("events");
-
-/***/ }),
-
-/***/ "http":
-/*!***********************!*\
-  !*** external "http" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("http");
-
-/***/ }),
-
-/***/ "https":
-/*!************************!*\
-  !*** external "https" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("https");
-
-/***/ }),
-
-/***/ "net":
-/*!**********************!*\
-  !*** external "net" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("net");
-
-/***/ }),
-
 /***/ "path":
 /*!***********************!*\
   !*** external "path" ***!
@@ -130,61 +64,6 @@ module.exports = require("net");
 
 "use strict";
 module.exports = require("path");
-
-/***/ }),
-
-/***/ "punycode":
-/*!***************************!*\
-  !*** external "punycode" ***!
-  \***************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("punycode");
-
-/***/ }),
-
-/***/ "stream":
-/*!*************************!*\
-  !*** external "stream" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("stream");
-
-/***/ }),
-
-/***/ "tls":
-/*!**********************!*\
-  !*** external "tls" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("tls");
-
-/***/ }),
-
-/***/ "url":
-/*!**********************!*\
-  !*** external "url" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("url");
-
-/***/ }),
-
-/***/ "zlib":
-/*!***********************!*\
-  !*** external "zlib" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("zlib");
 
 /***/ }),
 
@@ -357,7 +236,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createServerSupabase: () => (/* binding */ createServerSupabase)\n/* harmony export */ });\n/* harmony import */ var next_headers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/headers */ \"(action-browser)/./node_modules/next/dist/api/headers.js\");\n/* harmony import */ var _supabase_ssr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @supabase/ssr */ \"(action-browser)/./node_modules/@supabase/ssr/dist/module/index.js\");\n// lib/supabase/server.ts\n\n\nasync function createServerSupabase() {\n    const cookieStore = await (0,next_headers__WEBPACK_IMPORTED_MODULE_0__.cookies)();\n    const supabase = (0,_supabase_ssr__WEBPACK_IMPORTED_MODULE_1__.createServerClient)(\"https://nxfxugqvaobwvqxbblrf.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54Znh1Z3F2YW9id3ZxeGJibHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTIyODEsImV4cCI6MjA4MTM4ODI4MX0.PYuqA1qzem-KfekmiIIuTYrkqwwNbOYn35rJKKYqzU4\", {\n        cookies: {\n            get (name) {\n                return cookieStore.get(name)?.value;\n            },\n            set (name, value, options) {\n                cookieStore.set({\n                    name,\n                    value,\n                    ...options\n                });\n            },\n            remove (name, options) {\n                cookieStore.set({\n                    name,\n                    value: \"\",\n                    ...options\n                });\n            }\n        }\n    });\n    return supabase;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFjdGlvbi1icm93c2VyKS8uL2xpYi9zdXBhYmFzZS9zZXJ2ZXIudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEseUJBQXlCO0FBQ2M7QUFDZ0M7QUFHaEUsZUFBZUU7SUFDcEIsTUFBTUMsY0FBYyxNQUFNSCxxREFBT0E7SUFFakMsTUFBTUksV0FBV0gsaUVBQWtCQSxDQUNqQ0ksMENBQW9DLEVBQ3BDQSxrTkFBeUMsRUFDekM7UUFDRUwsU0FBUztZQUNQUyxLQUFJQyxJQUFZO2dCQUNkLE9BQU9QLFlBQVlNLEdBQUcsQ0FBQ0MsT0FBT0M7WUFDaEM7WUFDQUMsS0FBSUYsSUFBWSxFQUFFQyxLQUFhLEVBQUVFLE9BQXNCO2dCQUNyRFYsWUFBWVMsR0FBRyxDQUFDO29CQUNkRjtvQkFDQUM7b0JBQ0EsR0FBR0UsT0FBTztnQkFDWjtZQUNGO1lBQ0FDLFFBQU9KLElBQVksRUFBRUcsT0FBc0I7Z0JBQ3pDVixZQUFZUyxHQUFHLENBQUM7b0JBQ2RGO29CQUNBQyxPQUFPO29CQUNQLEdBQUdFLE9BQU87Z0JBQ1o7WUFDRjtRQUNGO0lBQ0Y7SUFHRixPQUFPVDtBQUNUIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZ2lmdC13aXNobGlzdC8uL2xpYi9zdXBhYmFzZS9zZXJ2ZXIudHM/NjYyNSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBsaWIvc3VwYWJhc2Uvc2VydmVyLnRzXHJcbmltcG9ydCB7IGNvb2tpZXMgfSBmcm9tIFwibmV4dC9oZWFkZXJzXCI7XHJcbmltcG9ydCB7IGNyZWF0ZVNlcnZlckNsaWVudCwgdHlwZSBDb29raWVPcHRpb25zIH0gZnJvbSBcIkBzdXBhYmFzZS9zc3JcIjtcclxuaW1wb3J0IHR5cGUgeyBEYXRhYmFzZSB9IGZyb20gXCJAL3R5cGVzL2RiXCI7XHJcblxyXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gY3JlYXRlU2VydmVyU3VwYWJhc2UoKSB7XHJcbiAgY29uc3QgY29va2llU3RvcmUgPSBhd2FpdCBjb29raWVzKCk7XHJcblxyXG4gIGNvbnN0IHN1cGFiYXNlID0gY3JlYXRlU2VydmVyQ2xpZW50PERhdGFiYXNlPihcclxuICAgIHByb2Nlc3MuZW52Lk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCEsXHJcbiAgICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSEsXHJcbiAgICB7XHJcbiAgICAgIGNvb2tpZXM6IHtcclxuICAgICAgICBnZXQobmFtZTogc3RyaW5nKSB7XHJcbiAgICAgICAgICByZXR1cm4gY29va2llU3RvcmUuZ2V0KG5hbWUpPy52YWx1ZTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIHNldChuYW1lOiBzdHJpbmcsIHZhbHVlOiBzdHJpbmcsIG9wdGlvbnM6IENvb2tpZU9wdGlvbnMpIHtcclxuICAgICAgICAgIGNvb2tpZVN0b3JlLnNldCh7XHJcbiAgICAgICAgICAgIG5hbWUsXHJcbiAgICAgICAgICAgIHZhbHVlLFxyXG4gICAgICAgICAgICAuLi5vcHRpb25zLFxyXG4gICAgICAgICAgfSk7XHJcbiAgICAgICAgfSxcclxuICAgICAgICByZW1vdmUobmFtZTogc3RyaW5nLCBvcHRpb25zOiBDb29raWVPcHRpb25zKSB7XHJcbiAgICAgICAgICBjb29raWVTdG9yZS5zZXQoe1xyXG4gICAgICAgICAgICBuYW1lLFxyXG4gICAgICAgICAgICB2YWx1ZTogXCJcIixcclxuICAgICAgICAgICAgLi4ub3B0aW9ucyxcclxuICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0sXHJcbiAgICAgIH0sXHJcbiAgICB9XHJcbiAgKTtcclxuXHJcbiAgcmV0dXJuIHN1cGFiYXNlO1xyXG59XHJcbiJdLCJuYW1lcyI6WyJjb29raWVzIiwiY3JlYXRlU2VydmVyQ2xpZW50IiwiY3JlYXRlU2VydmVyU3VwYWJhc2UiLCJjb29raWVTdG9yZSIsInN1cGFiYXNlIiwicHJvY2VzcyIsImVudiIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX0FOT05fS0VZIiwiZ2V0IiwibmFtZSIsInZhbHVlIiwic2V0Iiwib3B0aW9ucyIsInJlbW92ZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(action-browser)/./lib/supabase/server.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createServerSupabase: () => (/* binding */ createServerSupabase)\n/* harmony export */ });\n/* harmony import */ var next_headers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/headers */ \"(action-browser)/./node_modules/next/dist/api/headers.js\");\n/* harmony import */ var _supabase_ssr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @supabase/ssr */ \"(action-browser)/./node_modules/@supabase/ssr/dist/module/index.js\");\n// lib/supabase/server.ts\n\n\nasync function createServerSupabase() {\n    const cookieStore = await (0,next_headers__WEBPACK_IMPORTED_MODULE_0__.cookies)();\n    const supabase = (0,_supabase_ssr__WEBPACK_IMPORTED_MODULE_1__.createServerClient)(\"https://nxfxugqvaobwvqxbblrf.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54Znh1Z3F2YW9id3ZxeGJibHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTIyODEsImV4cCI6MjA4MTM4ODI4MX0.PYuqA1qzem-KfekmiIIuTYrkqwwNbOYn35rJKKYqzU4\", {\n        cookies: {\n            get (name) {\n                return cookieStore.get(name)?.value ?? \"\";\n            }\n        }\n    });\n    return supabase;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFjdGlvbi1icm93c2VyKS8uL2xpYi9zdXBhYmFzZS9zZXJ2ZXIudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEseUJBQXlCO0FBQ2M7QUFDWTtBQUc1QyxlQUFlRTtJQUNwQixNQUFNQyxjQUFjLE1BQU1ILHFEQUFPQTtJQUVqQyxNQUFNSSxXQUFXSCxpRUFBa0JBLENBQ2pDSSwwQ0FBb0MsRUFDcENBLGtOQUF5QyxFQUN6QztRQUNFTCxTQUFTO1lBQ1BTLEtBQUlDLElBQVk7Z0JBQ2QsT0FBT1AsWUFBWU0sR0FBRyxDQUFDQyxPQUFPQyxTQUFTO1lBQ3pDO1FBQ0Y7SUFDRjtJQUdGLE9BQU9QO0FBQ1QiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9naWZ0LXdpc2hsaXN0Ly4vbGliL3N1cGFiYXNlL3NlcnZlci50cz82NjI1Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGxpYi9zdXBhYmFzZS9zZXJ2ZXIudHNcclxuaW1wb3J0IHsgY29va2llcyB9IGZyb20gXCJuZXh0L2hlYWRlcnNcIjtcclxuaW1wb3J0IHsgY3JlYXRlU2VydmVyQ2xpZW50IH0gZnJvbSBcIkBzdXBhYmFzZS9zc3JcIjtcclxuaW1wb3J0IHR5cGUgeyBEYXRhYmFzZSB9IGZyb20gXCJAL3R5cGVzL2RiXCI7XHJcblxyXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gY3JlYXRlU2VydmVyU3VwYWJhc2UoKSB7XHJcbiAgY29uc3QgY29va2llU3RvcmUgPSBhd2FpdCBjb29raWVzKCk7XHJcblxyXG4gIGNvbnN0IHN1cGFiYXNlID0gY3JlYXRlU2VydmVyQ2xpZW50PERhdGFiYXNlPihcclxuICAgIHByb2Nlc3MuZW52Lk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCEsXHJcbiAgICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSEsXHJcbiAgICB7XHJcbiAgICAgIGNvb2tpZXM6IHtcclxuICAgICAgICBnZXQobmFtZTogc3RyaW5nKSB7XHJcbiAgICAgICAgICByZXR1cm4gY29va2llU3RvcmUuZ2V0KG5hbWUpPy52YWx1ZSA/PyBcIlwiO1xyXG4gICAgICAgIH0sXHJcbiAgICAgIH0sXHJcbiAgICB9XHJcbiAgKTtcclxuXHJcbiAgcmV0dXJuIHN1cGFiYXNlO1xyXG59XHJcbiJdLCJuYW1lcyI6WyJjb29raWVzIiwiY3JlYXRlU2VydmVyQ2xpZW50IiwiY3JlYXRlU2VydmVyU3VwYWJhc2UiLCJjb29raWVTdG9yZSIsInN1cGFiYXNlIiwicHJvY2VzcyIsImVudiIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX0FOT05fS0VZIiwiZ2V0IiwibmFtZSIsInZhbHVlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(action-browser)/./lib/supabase/server.ts\n");
 
 /***/ }),
 
@@ -368,7 +247,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createServerSupabase: () => (/* binding */ createServerSupabase)\n/* harmony export */ });\n/* harmony import */ var next_headers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/headers */ \"(rsc)/./node_modules/next/dist/api/headers.js\");\n/* harmony import */ var _supabase_ssr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @supabase/ssr */ \"(rsc)/./node_modules/@supabase/ssr/dist/module/index.js\");\n// lib/supabase/server.ts\n\n\nasync function createServerSupabase() {\n    const cookieStore = await (0,next_headers__WEBPACK_IMPORTED_MODULE_0__.cookies)();\n    const supabase = (0,_supabase_ssr__WEBPACK_IMPORTED_MODULE_1__.createServerClient)(\"https://nxfxugqvaobwvqxbblrf.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54Znh1Z3F2YW9id3ZxeGJibHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTIyODEsImV4cCI6MjA4MTM4ODI4MX0.PYuqA1qzem-KfekmiIIuTYrkqwwNbOYn35rJKKYqzU4\", {\n        cookies: {\n            get (name) {\n                return cookieStore.get(name)?.value;\n            },\n            set (name, value, options) {\n                cookieStore.set({\n                    name,\n                    value,\n                    ...options\n                });\n            },\n            remove (name, options) {\n                cookieStore.set({\n                    name,\n                    value: \"\",\n                    ...options\n                });\n            }\n        }\n    });\n    return supabase;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9saWIvc3VwYWJhc2Uvc2VydmVyLnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLHlCQUF5QjtBQUNjO0FBQ2dDO0FBR2hFLGVBQWVFO0lBQ3BCLE1BQU1DLGNBQWMsTUFBTUgscURBQU9BO0lBRWpDLE1BQU1JLFdBQVdILGlFQUFrQkEsQ0FDakNJLDBDQUFvQyxFQUNwQ0Esa05BQXlDLEVBQ3pDO1FBQ0VMLFNBQVM7WUFDUFMsS0FBSUMsSUFBWTtnQkFDZCxPQUFPUCxZQUFZTSxHQUFHLENBQUNDLE9BQU9DO1lBQ2hDO1lBQ0FDLEtBQUlGLElBQVksRUFBRUMsS0FBYSxFQUFFRSxPQUFzQjtnQkFDckRWLFlBQVlTLEdBQUcsQ0FBQztvQkFDZEY7b0JBQ0FDO29CQUNBLEdBQUdFLE9BQU87Z0JBQ1o7WUFDRjtZQUNBQyxRQUFPSixJQUFZLEVBQUVHLE9BQXNCO2dCQUN6Q1YsWUFBWVMsR0FBRyxDQUFDO29CQUNkRjtvQkFDQUMsT0FBTztvQkFDUCxHQUFHRSxPQUFPO2dCQUNaO1lBQ0Y7UUFDRjtJQUNGO0lBR0YsT0FBT1Q7QUFDVCIsInNvdXJjZXMiOlsid2VicGFjazovL2dpZnQtd2lzaGxpc3QvLi9saWIvc3VwYWJhc2Uvc2VydmVyLnRzPzY2MjUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gbGliL3N1cGFiYXNlL3NlcnZlci50c1xyXG5pbXBvcnQgeyBjb29raWVzIH0gZnJvbSBcIm5leHQvaGVhZGVyc1wiO1xyXG5pbXBvcnQgeyBjcmVhdGVTZXJ2ZXJDbGllbnQsIHR5cGUgQ29va2llT3B0aW9ucyB9IGZyb20gXCJAc3VwYWJhc2Uvc3NyXCI7XHJcbmltcG9ydCB0eXBlIHsgRGF0YWJhc2UgfSBmcm9tIFwiQC90eXBlcy9kYlwiO1xyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGNyZWF0ZVNlcnZlclN1cGFiYXNlKCkge1xyXG4gIGNvbnN0IGNvb2tpZVN0b3JlID0gYXdhaXQgY29va2llcygpO1xyXG5cclxuICBjb25zdCBzdXBhYmFzZSA9IGNyZWF0ZVNlcnZlckNsaWVudDxEYXRhYmFzZT4oXHJcbiAgICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwhLFxyXG4gICAgcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfQU5PTl9LRVkhLFxyXG4gICAge1xyXG4gICAgICBjb29raWVzOiB7XHJcbiAgICAgICAgZ2V0KG5hbWU6IHN0cmluZykge1xyXG4gICAgICAgICAgcmV0dXJuIGNvb2tpZVN0b3JlLmdldChuYW1lKT8udmFsdWU7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBzZXQobmFtZTogc3RyaW5nLCB2YWx1ZTogc3RyaW5nLCBvcHRpb25zOiBDb29raWVPcHRpb25zKSB7XHJcbiAgICAgICAgICBjb29raWVTdG9yZS5zZXQoe1xyXG4gICAgICAgICAgICBuYW1lLFxyXG4gICAgICAgICAgICB2YWx1ZSxcclxuICAgICAgICAgICAgLi4ub3B0aW9ucyxcclxuICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgcmVtb3ZlKG5hbWU6IHN0cmluZywgb3B0aW9uczogQ29va2llT3B0aW9ucykge1xyXG4gICAgICAgICAgY29va2llU3RvcmUuc2V0KHtcclxuICAgICAgICAgICAgbmFtZSxcclxuICAgICAgICAgICAgdmFsdWU6IFwiXCIsXHJcbiAgICAgICAgICAgIC4uLm9wdGlvbnMsXHJcbiAgICAgICAgICB9KTtcclxuICAgICAgICB9LFxyXG4gICAgICB9LFxyXG4gICAgfVxyXG4gICk7XHJcblxyXG4gIHJldHVybiBzdXBhYmFzZTtcclxufVxyXG4iXSwibmFtZXMiOlsiY29va2llcyIsImNyZWF0ZVNlcnZlckNsaWVudCIsImNyZWF0ZVNlcnZlclN1cGFiYXNlIiwiY29va2llU3RvcmUiLCJzdXBhYmFzZSIsInByb2Nlc3MiLCJlbnYiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSIsImdldCIsIm5hbWUiLCJ2YWx1ZSIsInNldCIsIm9wdGlvbnMiLCJyZW1vdmUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./lib/supabase/server.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createServerSupabase: () => (/* binding */ createServerSupabase)\n/* harmony export */ });\n/* harmony import */ var next_headers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/headers */ \"(rsc)/./node_modules/next/dist/api/headers.js\");\n/* harmony import */ var _supabase_ssr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @supabase/ssr */ \"(rsc)/./node_modules/@supabase/ssr/dist/module/index.js\");\n// lib/supabase/server.ts\n\n\nasync function createServerSupabase() {\n    const cookieStore = await (0,next_headers__WEBPACK_IMPORTED_MODULE_0__.cookies)();\n    const supabase = (0,_supabase_ssr__WEBPACK_IMPORTED_MODULE_1__.createServerClient)(\"https://nxfxugqvaobwvqxbblrf.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54Znh1Z3F2YW9id3ZxeGJibHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTIyODEsImV4cCI6MjA4MTM4ODI4MX0.PYuqA1qzem-KfekmiIIuTYrkqwwNbOYn35rJKKYqzU4\", {\n        cookies: {\n            get (name) {\n                return cookieStore.get(name)?.value ?? \"\";\n            }\n        }\n    });\n    return supabase;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9saWIvc3VwYWJhc2Uvc2VydmVyLnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLHlCQUF5QjtBQUNjO0FBQ1k7QUFHNUMsZUFBZUU7SUFDcEIsTUFBTUMsY0FBYyxNQUFNSCxxREFBT0E7SUFFakMsTUFBTUksV0FBV0gsaUVBQWtCQSxDQUNqQ0ksMENBQW9DLEVBQ3BDQSxrTkFBeUMsRUFDekM7UUFDRUwsU0FBUztZQUNQUyxLQUFJQyxJQUFZO2dCQUNkLE9BQU9QLFlBQVlNLEdBQUcsQ0FBQ0MsT0FBT0MsU0FBUztZQUN6QztRQUNGO0lBQ0Y7SUFHRixPQUFPUDtBQUNUIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZ2lmdC13aXNobGlzdC8uL2xpYi9zdXBhYmFzZS9zZXJ2ZXIudHM/NjYyNSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBsaWIvc3VwYWJhc2Uvc2VydmVyLnRzXHJcbmltcG9ydCB7IGNvb2tpZXMgfSBmcm9tIFwibmV4dC9oZWFkZXJzXCI7XHJcbmltcG9ydCB7IGNyZWF0ZVNlcnZlckNsaWVudCB9IGZyb20gXCJAc3VwYWJhc2Uvc3NyXCI7XHJcbmltcG9ydCB0eXBlIHsgRGF0YWJhc2UgfSBmcm9tIFwiQC90eXBlcy9kYlwiO1xyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGNyZWF0ZVNlcnZlclN1cGFiYXNlKCkge1xyXG4gIGNvbnN0IGNvb2tpZVN0b3JlID0gYXdhaXQgY29va2llcygpO1xyXG5cclxuICBjb25zdCBzdXBhYmFzZSA9IGNyZWF0ZVNlcnZlckNsaWVudDxEYXRhYmFzZT4oXHJcbiAgICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwhLFxyXG4gICAgcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfQU5PTl9LRVkhLFxyXG4gICAge1xyXG4gICAgICBjb29raWVzOiB7XHJcbiAgICAgICAgZ2V0KG5hbWU6IHN0cmluZykge1xyXG4gICAgICAgICAgcmV0dXJuIGNvb2tpZVN0b3JlLmdldChuYW1lKT8udmFsdWUgPz8gXCJcIjtcclxuICAgICAgICB9LFxyXG4gICAgICB9LFxyXG4gICAgfVxyXG4gICk7XHJcblxyXG4gIHJldHVybiBzdXBhYmFzZTtcclxufVxyXG4iXSwibmFtZXMiOlsiY29va2llcyIsImNyZWF0ZVNlcnZlckNsaWVudCIsImNyZWF0ZVNlcnZlclN1cGFiYXNlIiwiY29va2llU3RvcmUiLCJzdXBhYmFzZSIsInByb2Nlc3MiLCJlbnYiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSIsImdldCIsIm5hbWUiLCJ2YWx1ZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./lib/supabase/server.ts\n");
 
 /***/ })
 
@@ -379,7 +258,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@supabase","vendor-chunks/tr46","vendor-chunks/whatwg-url","vendor-chunks/cookie","vendor-chunks/webidl-conversions","vendor-chunks/@swc"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Ffriends%2Fpage&page=%2Ffriends%2Fpage&appPaths=%2Ffriends%2Fpage&pagePath=private-next-app-dir%2Ffriends%2Fpage.tsx&appDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/@supabase","vendor-chunks/tslib","vendor-chunks/iceberg-js","vendor-chunks/cookie"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Ffriends%2Fpage&page=%2Ffriends%2Fpage&appPaths=%2Ffriends%2Fpage&pagePath=private-next-app-dir%2Ffriends%2Fpage.tsx&appDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();

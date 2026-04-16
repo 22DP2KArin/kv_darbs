@@ -56,72 +56,6 @@ module.exports = require("next/dist/server/app-render/work-unit-async-storage.ex
 
 /***/ }),
 
-/***/ "buffer":
-/*!*************************!*\
-  !*** external "buffer" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("buffer");
-
-/***/ }),
-
-/***/ "crypto":
-/*!*************************!*\
-  !*** external "crypto" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("crypto");
-
-/***/ }),
-
-/***/ "events":
-/*!*************************!*\
-  !*** external "events" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("events");
-
-/***/ }),
-
-/***/ "http":
-/*!***********************!*\
-  !*** external "http" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("http");
-
-/***/ }),
-
-/***/ "https":
-/*!************************!*\
-  !*** external "https" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("https");
-
-/***/ }),
-
-/***/ "net":
-/*!**********************!*\
-  !*** external "net" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("net");
-
-/***/ }),
-
 /***/ "path":
 /*!***********************!*\
   !*** external "path" ***!
@@ -130,61 +64,6 @@ module.exports = require("net");
 
 "use strict";
 module.exports = require("path");
-
-/***/ }),
-
-/***/ "punycode":
-/*!***************************!*\
-  !*** external "punycode" ***!
-  \***************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("punycode");
-
-/***/ }),
-
-/***/ "stream":
-/*!*************************!*\
-  !*** external "stream" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("stream");
-
-/***/ }),
-
-/***/ "tls":
-/*!**********************!*\
-  !*** external "tls" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("tls");
-
-/***/ }),
-
-/***/ "url":
-/*!**********************!*\
-  !*** external "url" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("url");
-
-/***/ }),
-
-/***/ "zlib":
-/*!***********************!*\
-  !*** external "zlib" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("zlib");
 
 /***/ }),
 
@@ -219,13 +98,13 @@ eval("Promise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__w
 
 /***/ }),
 
-/***/ "(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?server=true!":
-/*!******************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?server=true! ***!
-  \******************************************************************************************************/
-/***/ (() => {
+/***/ "(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5C%5CDesktop%5C%5Ckv_darbs%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Clink.js%22%2C%22ids%22%3A%5B%22*%22%5D%7D&server=true!":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5C%5CDesktop%5C%5Ckv_darbs%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Clink.js%22%2C%22ids%22%3A%5B%22*%22%5D%7D&server=true! ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-
+eval("Promise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/link.js */ \"(ssr)/./node_modules/next/dist/client/link.js\", 23));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LWZsaWdodC1jbGllbnQtZW50cnktbG9hZGVyLmpzP21vZHVsZXM9JTdCJTIycmVxdWVzdCUyMiUzQSUyMkMlM0ElNUMlNUNVc2VycyU1QyU1QyVEMCU5QSVEMCVCMCVEMSU4MCVEMCVCOCVEMCVCRCVEMCVCMCU1QyU1Q0Rlc2t0b3AlNUMlNUNrdl9kYXJicyU1QyU1Q25vZGVfbW9kdWxlcyU1QyU1Q25leHQlNUMlNUNkaXN0JTVDJTVDY2xpZW50JTVDJTVDbGluay5qcyUyMiUyQyUyMmlkcyUyMiUzQSU1QiUyMiolMjIlNUQlN0Qmc2VydmVyPXRydWUhIiwibWFwcGluZ3MiOiJBQUFBLGdNQUFvSCIsInNvdXJjZXMiOlsid2VicGFjazovL2dpZnQtd2lzaGxpc3QvPzE0NzMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0KC8qIHdlYnBhY2tNb2RlOiBcImVhZ2VyXCIgKi8gXCJDOlxcXFxVc2Vyc1xcXFzQmtCw0YDQuNC90LBcXFxcRGVza3RvcFxcXFxrdl9kYXJic1xcXFxub2RlX21vZHVsZXNcXFxcbmV4dFxcXFxkaXN0XFxcXGNsaWVudFxcXFxsaW5rLmpzXCIpO1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5C%5CDesktop%5C%5Ckv_darbs%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Clink.js%22%2C%22ids%22%3A%5B%22*%22%5D%7D&server=true!\n");
 
 /***/ }),
 
@@ -269,7 +148,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ GiftCard)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(rsc)/./node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n// components/GiftCard.tsx\n\nfunction GiftCard({ id, title, price, description, image_url }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"card space-y-2\",\n        children: [\n            image_url && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                src: image_url,\n                alt: title,\n                className: \"h-40 w-full rounded object-cover\"\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                lineNumber: 22,\n                columnNumber: 9\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                className: \"font-semibold\",\n                children: title\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                lineNumber: 29,\n                columnNumber: 7\n            }, this),\n            price != null && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                className: \"text-sm text-slate-700\",\n                children: [\n                    price,\n                    \" €\"\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                lineNumber: 31,\n                columnNumber: 25\n            }, this),\n            description && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                className: \"text-sm text-slate-600 line-clamp-2\",\n                children: description\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                lineNumber: 34,\n                columnNumber: 9\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n        lineNumber: 20,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9jb21wb25lbnRzL0dpZnRDYXJkLnRzeCIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSwwQkFBMEI7O0FBV1gsU0FBU0EsU0FBUyxFQUMvQkMsRUFBRSxFQUNGQyxLQUFLLEVBQ0xDLEtBQUssRUFDTEMsV0FBVyxFQUNYQyxTQUFTLEVBQ0s7SUFDZCxxQkFDRSw4REFBQ0M7UUFBSUMsV0FBVTs7WUFDWkYsMkJBQ0MsOERBQUNHO2dCQUNDQyxLQUFLSjtnQkFDTEssS0FBS1I7Z0JBQ0xLLFdBQVU7Ozs7OzswQkFJZCw4REFBQ0k7Z0JBQUdKLFdBQVU7MEJBQWlCTDs7Ozs7O1lBRTlCQyxTQUFTLHNCQUFRLDhEQUFDUztnQkFBRUwsV0FBVTs7b0JBQTBCSjtvQkFBTTs7Ozs7OztZQUU5REMsNkJBQ0MsOERBQUNRO2dCQUFFTCxXQUFVOzBCQUF1Q0g7Ozs7Ozs7Ozs7OztBQUk1RCIsInNvdXJjZXMiOlsid2VicGFjazovL2dpZnQtd2lzaGxpc3QvLi9jb21wb25lbnRzL0dpZnRDYXJkLnRzeD9kODJjIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIGNvbXBvbmVudHMvR2lmdENhcmQudHN4XHJcbmltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcclxuXHJcbnR5cGUgR2lmdENhcmRQcm9wcyA9IHtcclxuICBpZDogbnVtYmVyO1xyXG4gIHRpdGxlOiBzdHJpbmc7XHJcbiAgcHJpY2U6IG51bWJlcjtcclxuICBkZXNjcmlwdGlvbj86IHN0cmluZztcclxuICBpbWFnZV91cmw/OiBzdHJpbmc7XHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBHaWZ0Q2FyZCh7XHJcbiAgaWQsXHJcbiAgdGl0bGUsXHJcbiAgcHJpY2UsXHJcbiAgZGVzY3JpcHRpb24sXHJcbiAgaW1hZ2VfdXJsLFxyXG59OiBHaWZ0Q2FyZFByb3BzKSB7XHJcbiAgcmV0dXJuIChcclxuICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZCBzcGFjZS15LTJcIj5cclxuICAgICAge2ltYWdlX3VybCAmJiAoXHJcbiAgICAgICAgPGltZ1xyXG4gICAgICAgICAgc3JjPXtpbWFnZV91cmx9XHJcbiAgICAgICAgICBhbHQ9e3RpdGxlfVxyXG4gICAgICAgICAgY2xhc3NOYW1lPVwiaC00MCB3LWZ1bGwgcm91bmRlZCBvYmplY3QtY292ZXJcIlxyXG4gICAgICAgIC8+XHJcbiAgICAgICl9XHJcblxyXG4gICAgICA8aDIgY2xhc3NOYW1lPVwiZm9udC1zZW1pYm9sZFwiPnt0aXRsZX08L2gyPlxyXG5cclxuICAgICAge3ByaWNlICE9IG51bGwgJiYgPHAgY2xhc3NOYW1lPVwidGV4dC1zbSB0ZXh0LXNsYXRlLTcwMFwiPntwcmljZX0g4oKsPC9wPn1cclxuXHJcbiAgICAgIHtkZXNjcmlwdGlvbiAmJiAoXHJcbiAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1zbSB0ZXh0LXNsYXRlLTYwMCBsaW5lLWNsYW1wLTJcIj57ZGVzY3JpcHRpb259PC9wPlxyXG4gICAgICApfVxyXG4gICAgPC9kaXY+XHJcbiAgKTtcclxufVxyXG4iXSwibmFtZXMiOlsiR2lmdENhcmQiLCJpZCIsInRpdGxlIiwicHJpY2UiLCJkZXNjcmlwdGlvbiIsImltYWdlX3VybCIsImRpdiIsImNsYXNzTmFtZSIsImltZyIsInNyYyIsImFsdCIsImgyIiwicCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./components/GiftCard.tsx\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ GiftCard)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(rsc)/./node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ \"(rsc)/./node_modules/next/dist/api/link.js\");\n// components/GiftCard.tsx\n\n\nfunction GiftCard({ id, title, price, description, image_url }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"article\", {\n        className: \"flex h-full flex-col rounded-lg border bg-white shadow-sm\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"relative h-48 w-full overflow-hidden rounded-t-lg\",\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                    src: image_url ?? \"/placeholder.png\",\n                    alt: title,\n                    className: \"h-full w-full object-cover\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                    lineNumber: 22,\n                    columnNumber: 9\n                }, this)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                lineNumber: 21,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"flex flex-1 flex-col p-4\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                        className: \"line-clamp-2 text-lg font-semibold\",\n                        children: title\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                        lineNumber: 30,\n                        columnNumber: 9\n                    }, this),\n                    price != null && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                        className: \"mt-1 text-sm text-slate-700\",\n                        children: [\n                            price,\n                            \" €\"\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                        lineNumber: 33,\n                        columnNumber: 11\n                    }, this),\n                    description && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                        className: \"mt-2 line-clamp-3 text-sm text-slate-600\",\n                        children: description\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                        lineNumber: 37,\n                        columnNumber: 11\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"mt-auto pt-3\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                            href: `/gifts/${id}`,\n                            className: \"btn-secondary inline-block w-full text-center\",\n                            children: \"Skatīt detalizēti\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                            lineNumber: 43,\n                            columnNumber: 11\n                        }, this)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                        lineNumber: 42,\n                        columnNumber: 9\n                    }, this)\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n                lineNumber: 29,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\Users\\\\Карина\\\\Desktop\\\\kv_darbs\\\\components\\\\GiftCard.tsx\",\n        lineNumber: 20,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9jb21wb25lbnRzL0dpZnRDYXJkLnRzeCIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUEsMEJBQTBCOztBQUNHO0FBVWQsU0FBU0MsU0FBUyxFQUMvQkMsRUFBRSxFQUNGQyxLQUFLLEVBQ0xDLEtBQUssRUFDTEMsV0FBVyxFQUNYQyxTQUFTLEVBQ0s7SUFDZCxxQkFDRSw4REFBQ0M7UUFBUUMsV0FBVTs7MEJBQ2pCLDhEQUFDQztnQkFBSUQsV0FBVTswQkFDYiw0RUFBQ0U7b0JBQ0NDLEtBQUtMLGFBQWE7b0JBQ2xCTSxLQUFLVDtvQkFDTEssV0FBVTs7Ozs7Ozs7Ozs7MEJBSWQsOERBQUNDO2dCQUFJRCxXQUFVOztrQ0FDYiw4REFBQ0s7d0JBQUdMLFdBQVU7a0NBQXNDTDs7Ozs7O29CQUVuREMsU0FBUyxzQkFDUiw4REFBQ1U7d0JBQUVOLFdBQVU7OzRCQUErQko7NEJBQU07Ozs7Ozs7b0JBR25EQyw2QkFDQyw4REFBQ1M7d0JBQUVOLFdBQVU7a0NBQ1ZIOzs7Ozs7a0NBSUwsOERBQUNJO3dCQUFJRCxXQUFVO2tDQUNiLDRFQUFDUixpREFBSUE7NEJBQ0hlLE1BQU0sQ0FBQyxPQUFPLEVBQUViLElBQUk7NEJBQ3BCTSxXQUFVO3NDQUNYOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQU9YIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZ2lmdC13aXNobGlzdC8uL2NvbXBvbmVudHMvR2lmdENhcmQudHN4P2Q4MmMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gY29tcG9uZW50cy9HaWZ0Q2FyZC50c3hcclxuaW1wb3J0IExpbmsgZnJvbSBcIm5leHQvbGlua1wiO1xyXG5cclxudHlwZSBHaWZ0Q2FyZFByb3BzID0ge1xyXG4gIGlkOiBudW1iZXI7XHJcbiAgdGl0bGU6IHN0cmluZztcclxuICBwcmljZTogbnVtYmVyO1xyXG4gIGRlc2NyaXB0aW9uPzogc3RyaW5nO1xyXG4gIGltYWdlX3VybD86IHN0cmluZztcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEdpZnRDYXJkKHtcclxuICBpZCxcclxuICB0aXRsZSxcclxuICBwcmljZSxcclxuICBkZXNjcmlwdGlvbixcclxuICBpbWFnZV91cmwsXHJcbn06IEdpZnRDYXJkUHJvcHMpIHtcclxuICByZXR1cm4gKFxyXG4gICAgPGFydGljbGUgY2xhc3NOYW1lPVwiZmxleCBoLWZ1bGwgZmxleC1jb2wgcm91bmRlZC1sZyBib3JkZXIgYmctd2hpdGUgc2hhZG93LXNtXCI+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgaC00OCB3LWZ1bGwgb3ZlcmZsb3ctaGlkZGVuIHJvdW5kZWQtdC1sZ1wiPlxyXG4gICAgICAgIDxpbWdcclxuICAgICAgICAgIHNyYz17aW1hZ2VfdXJsID8/IFwiL3BsYWNlaG9sZGVyLnBuZ1wifVxyXG4gICAgICAgICAgYWx0PXt0aXRsZX1cclxuICAgICAgICAgIGNsYXNzTmFtZT1cImgtZnVsbCB3LWZ1bGwgb2JqZWN0LWNvdmVyXCJcclxuICAgICAgICAvPlxyXG4gICAgICA8L2Rpdj5cclxuXHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LTEgZmxleC1jb2wgcC00XCI+XHJcbiAgICAgICAgPGgyIGNsYXNzTmFtZT1cImxpbmUtY2xhbXAtMiB0ZXh0LWxnIGZvbnQtc2VtaWJvbGRcIj57dGl0bGV9PC9oMj5cclxuXHJcbiAgICAgICAge3ByaWNlICE9IG51bGwgJiYgKFxyXG4gICAgICAgICAgPHAgY2xhc3NOYW1lPVwibXQtMSB0ZXh0LXNtIHRleHQtc2xhdGUtNzAwXCI+e3ByaWNlfSDigqw8L3A+XHJcbiAgICAgICAgKX1cclxuXHJcbiAgICAgICAge2Rlc2NyaXB0aW9uICYmIChcclxuICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTIgbGluZS1jbGFtcC0zIHRleHQtc20gdGV4dC1zbGF0ZS02MDBcIj5cclxuICAgICAgICAgICAge2Rlc2NyaXB0aW9ufVxyXG4gICAgICAgICAgPC9wPlxyXG4gICAgICAgICl9XHJcblxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtYXV0byBwdC0zXCI+XHJcbiAgICAgICAgICA8TGlua1xyXG4gICAgICAgICAgICBocmVmPXtgL2dpZnRzLyR7aWR9YH1cclxuICAgICAgICAgICAgY2xhc3NOYW1lPVwiYnRuLXNlY29uZGFyeSBpbmxpbmUtYmxvY2sgdy1mdWxsIHRleHQtY2VudGVyXCJcclxuICAgICAgICAgID5cclxuICAgICAgICAgICAgU2thdMSrdCBkZXRhbGl6xJN0aVxyXG4gICAgICAgICAgPC9MaW5rPlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvYXJ0aWNsZT5cclxuICApO1xyXG59XHJcbiJdLCJuYW1lcyI6WyJMaW5rIiwiR2lmdENhcmQiLCJpZCIsInRpdGxlIiwicHJpY2UiLCJkZXNjcmlwdGlvbiIsImltYWdlX3VybCIsImFydGljbGUiLCJjbGFzc05hbWUiLCJkaXYiLCJpbWciLCJzcmMiLCJhbHQiLCJoMiIsInAiLCJocmVmIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./components/GiftCard.tsx\n");
 
 /***/ }),
 
@@ -302,7 +181,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createServerSupabase: () => (/* binding */ createServerSupabase)\n/* harmony export */ });\n/* harmony import */ var next_headers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/headers */ \"(rsc)/./node_modules/next/dist/api/headers.js\");\n/* harmony import */ var _supabase_ssr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @supabase/ssr */ \"(rsc)/./node_modules/@supabase/ssr/dist/module/index.js\");\n// lib/supabase/server.ts\n\n\nasync function createServerSupabase() {\n    const cookieStore = await (0,next_headers__WEBPACK_IMPORTED_MODULE_0__.cookies)();\n    const supabase = (0,_supabase_ssr__WEBPACK_IMPORTED_MODULE_1__.createServerClient)(\"https://nxfxugqvaobwvqxbblrf.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54Znh1Z3F2YW9id3ZxeGJibHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTIyODEsImV4cCI6MjA4MTM4ODI4MX0.PYuqA1qzem-KfekmiIIuTYrkqwwNbOYn35rJKKYqzU4\", {\n        cookies: {\n            get (name) {\n                return cookieStore.get(name)?.value;\n            },\n            set (name, value, options) {\n                cookieStore.set({\n                    name,\n                    value,\n                    ...options\n                });\n            },\n            remove (name, options) {\n                cookieStore.set({\n                    name,\n                    value: \"\",\n                    ...options\n                });\n            }\n        }\n    });\n    return supabase;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9saWIvc3VwYWJhc2Uvc2VydmVyLnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLHlCQUF5QjtBQUNjO0FBQ2dDO0FBR2hFLGVBQWVFO0lBQ3BCLE1BQU1DLGNBQWMsTUFBTUgscURBQU9BO0lBRWpDLE1BQU1JLFdBQVdILGlFQUFrQkEsQ0FDakNJLDBDQUFvQyxFQUNwQ0Esa05BQXlDLEVBQ3pDO1FBQ0VMLFNBQVM7WUFDUFMsS0FBSUMsSUFBWTtnQkFDZCxPQUFPUCxZQUFZTSxHQUFHLENBQUNDLE9BQU9DO1lBQ2hDO1lBQ0FDLEtBQUlGLElBQVksRUFBRUMsS0FBYSxFQUFFRSxPQUFzQjtnQkFDckRWLFlBQVlTLEdBQUcsQ0FBQztvQkFDZEY7b0JBQ0FDO29CQUNBLEdBQUdFLE9BQU87Z0JBQ1o7WUFDRjtZQUNBQyxRQUFPSixJQUFZLEVBQUVHLE9BQXNCO2dCQUN6Q1YsWUFBWVMsR0FBRyxDQUFDO29CQUNkRjtvQkFDQUMsT0FBTztvQkFDUCxHQUFHRSxPQUFPO2dCQUNaO1lBQ0Y7UUFDRjtJQUNGO0lBR0YsT0FBT1Q7QUFDVCIsInNvdXJjZXMiOlsid2VicGFjazovL2dpZnQtd2lzaGxpc3QvLi9saWIvc3VwYWJhc2Uvc2VydmVyLnRzPzY2MjUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gbGliL3N1cGFiYXNlL3NlcnZlci50c1xyXG5pbXBvcnQgeyBjb29raWVzIH0gZnJvbSBcIm5leHQvaGVhZGVyc1wiO1xyXG5pbXBvcnQgeyBjcmVhdGVTZXJ2ZXJDbGllbnQsIHR5cGUgQ29va2llT3B0aW9ucyB9IGZyb20gXCJAc3VwYWJhc2Uvc3NyXCI7XHJcbmltcG9ydCB0eXBlIHsgRGF0YWJhc2UgfSBmcm9tIFwiQC90eXBlcy9kYlwiO1xyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGNyZWF0ZVNlcnZlclN1cGFiYXNlKCkge1xyXG4gIGNvbnN0IGNvb2tpZVN0b3JlID0gYXdhaXQgY29va2llcygpO1xyXG5cclxuICBjb25zdCBzdXBhYmFzZSA9IGNyZWF0ZVNlcnZlckNsaWVudDxEYXRhYmFzZT4oXHJcbiAgICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwhLFxyXG4gICAgcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfQU5PTl9LRVkhLFxyXG4gICAge1xyXG4gICAgICBjb29raWVzOiB7XHJcbiAgICAgICAgZ2V0KG5hbWU6IHN0cmluZykge1xyXG4gICAgICAgICAgcmV0dXJuIGNvb2tpZVN0b3JlLmdldChuYW1lKT8udmFsdWU7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBzZXQobmFtZTogc3RyaW5nLCB2YWx1ZTogc3RyaW5nLCBvcHRpb25zOiBDb29raWVPcHRpb25zKSB7XHJcbiAgICAgICAgICBjb29raWVTdG9yZS5zZXQoe1xyXG4gICAgICAgICAgICBuYW1lLFxyXG4gICAgICAgICAgICB2YWx1ZSxcclxuICAgICAgICAgICAgLi4ub3B0aW9ucyxcclxuICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgcmVtb3ZlKG5hbWU6IHN0cmluZywgb3B0aW9uczogQ29va2llT3B0aW9ucykge1xyXG4gICAgICAgICAgY29va2llU3RvcmUuc2V0KHtcclxuICAgICAgICAgICAgbmFtZSxcclxuICAgICAgICAgICAgdmFsdWU6IFwiXCIsXHJcbiAgICAgICAgICAgIC4uLm9wdGlvbnMsXHJcbiAgICAgICAgICB9KTtcclxuICAgICAgICB9LFxyXG4gICAgICB9LFxyXG4gICAgfVxyXG4gICk7XHJcblxyXG4gIHJldHVybiBzdXBhYmFzZTtcclxufVxyXG4iXSwibmFtZXMiOlsiY29va2llcyIsImNyZWF0ZVNlcnZlckNsaWVudCIsImNyZWF0ZVNlcnZlclN1cGFiYXNlIiwiY29va2llU3RvcmUiLCJzdXBhYmFzZSIsInByb2Nlc3MiLCJlbnYiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSIsImdldCIsIm5hbWUiLCJ2YWx1ZSIsInNldCIsIm9wdGlvbnMiLCJyZW1vdmUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./lib/supabase/server.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createServerSupabase: () => (/* binding */ createServerSupabase)\n/* harmony export */ });\n/* harmony import */ var next_headers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/headers */ \"(rsc)/./node_modules/next/dist/api/headers.js\");\n/* harmony import */ var _supabase_ssr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @supabase/ssr */ \"(rsc)/./node_modules/@supabase/ssr/dist/module/index.js\");\n// lib/supabase/server.ts\n\n\nasync function createServerSupabase() {\n    const cookieStore = await (0,next_headers__WEBPACK_IMPORTED_MODULE_0__.cookies)();\n    const supabase = (0,_supabase_ssr__WEBPACK_IMPORTED_MODULE_1__.createServerClient)(\"https://nxfxugqvaobwvqxbblrf.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54Znh1Z3F2YW9id3ZxeGJibHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4MTIyODEsImV4cCI6MjA4MTM4ODI4MX0.PYuqA1qzem-KfekmiIIuTYrkqwwNbOYn35rJKKYqzU4\", {\n        cookies: {\n            get (name) {\n                return cookieStore.get(name)?.value ?? \"\";\n            }\n        }\n    });\n    return supabase;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9saWIvc3VwYWJhc2Uvc2VydmVyLnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLHlCQUF5QjtBQUNjO0FBQ1k7QUFHNUMsZUFBZUU7SUFDcEIsTUFBTUMsY0FBYyxNQUFNSCxxREFBT0E7SUFFakMsTUFBTUksV0FBV0gsaUVBQWtCQSxDQUNqQ0ksMENBQW9DLEVBQ3BDQSxrTkFBeUMsRUFDekM7UUFDRUwsU0FBUztZQUNQUyxLQUFJQyxJQUFZO2dCQUNkLE9BQU9QLFlBQVlNLEdBQUcsQ0FBQ0MsT0FBT0MsU0FBUztZQUN6QztRQUNGO0lBQ0Y7SUFHRixPQUFPUDtBQUNUIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZ2lmdC13aXNobGlzdC8uL2xpYi9zdXBhYmFzZS9zZXJ2ZXIudHM/NjYyNSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBsaWIvc3VwYWJhc2Uvc2VydmVyLnRzXHJcbmltcG9ydCB7IGNvb2tpZXMgfSBmcm9tIFwibmV4dC9oZWFkZXJzXCI7XHJcbmltcG9ydCB7IGNyZWF0ZVNlcnZlckNsaWVudCB9IGZyb20gXCJAc3VwYWJhc2Uvc3NyXCI7XHJcbmltcG9ydCB0eXBlIHsgRGF0YWJhc2UgfSBmcm9tIFwiQC90eXBlcy9kYlwiO1xyXG5cclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGNyZWF0ZVNlcnZlclN1cGFiYXNlKCkge1xyXG4gIGNvbnN0IGNvb2tpZVN0b3JlID0gYXdhaXQgY29va2llcygpO1xyXG5cclxuICBjb25zdCBzdXBhYmFzZSA9IGNyZWF0ZVNlcnZlckNsaWVudDxEYXRhYmFzZT4oXHJcbiAgICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwhLFxyXG4gICAgcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfQU5PTl9LRVkhLFxyXG4gICAge1xyXG4gICAgICBjb29raWVzOiB7XHJcbiAgICAgICAgZ2V0KG5hbWU6IHN0cmluZykge1xyXG4gICAgICAgICAgcmV0dXJuIGNvb2tpZVN0b3JlLmdldChuYW1lKT8udmFsdWUgPz8gXCJcIjtcclxuICAgICAgICB9LFxyXG4gICAgICB9LFxyXG4gICAgfVxyXG4gICk7XHJcblxyXG4gIHJldHVybiBzdXBhYmFzZTtcclxufVxyXG4iXSwibmFtZXMiOlsiY29va2llcyIsImNyZWF0ZVNlcnZlckNsaWVudCIsImNyZWF0ZVNlcnZlclN1cGFiYXNlIiwiY29va2llU3RvcmUiLCJzdXBhYmFzZSIsInByb2Nlc3MiLCJlbnYiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSIsImdldCIsIm5hbWUiLCJ2YWx1ZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./lib/supabase/server.ts\n");
 
 /***/ })
 
@@ -313,7 +192,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@supabase","vendor-chunks/tr46","vendor-chunks/whatwg-url","vendor-chunks/cookie","vendor-chunks/webidl-conversions","vendor-chunks/@swc"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fideas%2Fpage&page=%2Fideas%2Fpage&appPaths=%2Fideas%2Fpage&pagePath=private-next-app-dir%2Fideas%2Fpage.tsx&appDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc","vendor-chunks/@supabase","vendor-chunks/tslib","vendor-chunks/iceberg-js","vendor-chunks/cookie"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fideas%2Fpage&page=%2Fideas%2Fpage&appPaths=%2Fideas%2Fpage&pagePath=private-next-app-dir%2Fideas%2Fpage.tsx&appDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5C%D0%9A%D0%B0%D1%80%D0%B8%D0%BD%D0%B0%5CDesktop%5Ckv_darbs&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();

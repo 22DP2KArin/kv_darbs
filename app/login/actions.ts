@@ -1,13 +1,14 @@
+// app/login/actions.ts
 "use server";
 
-import { createServerSupabase } from "@/lib/supabase/server";
+import { createServerSupabaseForActions } from "@/lib/supabase/server-actions";
 import { redirect } from "next/navigation";
 
 export async function loginAction(formData: FormData) {
   const email = String(formData.get("email"));
   const password = String(formData.get("password"));
 
-  const supabase = await createServerSupabase();
+  const supabase = await createServerSupabaseForActions();
 
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
@@ -19,7 +20,7 @@ export async function loginAction(formData: FormData) {
     throw new Error(error.message);
   }
 
-  console.log("LOGIN OK", data); 
+  console.log("LOGIN OK", data);
 
-  redirect("/profile");
+  redirect("/"); 
 }

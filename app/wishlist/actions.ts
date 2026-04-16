@@ -1,16 +1,15 @@
 "use server";
 
-import { createServerSupabase } from "@/lib/supabase/server";
+import { createServerSupabaseForActions } from "@/lib/supabase/server-actions";
 import { requireAuth } from "@/lib/auth";
 
 export async function updateQuantityAction(id: number, quantity: number) {
   const user = await requireAuth();
-  const supabase = createServerSupabase();
-  const anySupabase: any = supabase;
+  const supabase = await createServerSupabaseForActions();
 
-  const { error } = await anySupabase
-    .from("wishlist_items")
-    .update({ quantity })
+  const { error } = await supabase
+    .from("wishlist_items" as any)
+    .update({ quantity } as any)
     .eq("id", id)
     .eq("user_id", user.id);
 
@@ -21,16 +20,18 @@ export async function updateQuantityAction(id: number, quantity: number) {
 
 export async function removeItemAction(id: number) {
   const user = await requireAuth();
-  const supabase = createServerSupabase();
-  const anySupabase: any = supabase;
+  console.log("REMOVE ITEM", { id, userId: user.id });
 
-  const { error } = await anySupabase
-    .from("wishlist_items")
+  const supabase = await createServerSupabaseForActions();
+
+  const { error } = await supabase
+    .from("wishlist_items" as any)
     .delete()
     .eq("id", id)
     .eq("user_id", user.id);
 
   if (error) {
+    console.error("REMOVE ERROR", error);
     throw new Error(error.message);
   }
 }

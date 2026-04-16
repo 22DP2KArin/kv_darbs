@@ -1,73 +1,83 @@
+// app/profile/actions.ts
 "use server";
 
-import { createServerSupabase } from "@/lib/supabase/server";
+import { createServerSupabaseForActions } from "@/lib/supabase/server-actions";
+import { redirect } from "next/navigation";
 
-type ProfileForm = {
-  username: string;
-  avatarUrl: string;
-  hobbies: string;
-  interests: string;
+export type Profile = {
+  id: string;
+  username: string | null;
+  avatar_url: string | null;
+  hobbies: string[] | null;
+  interests: string[] | null;
 };
 
-export async function getProfile() {
-  const supabase = (await createServerSupabase()) as any;
+export async function getProfile(): Promise<Profile | null> {
+  const supabase = await createServerSupabaseForActions();
 
   const {
     data: { user },
     error: userError,
   } = await supabase.auth.getUser();
 
-
   if (userError || !user) {
-    throw new Error("Nav pieteicies");
-  
+    return null;
   }
 
-  const { data, error } = await supabase
-    .from("profiles")
+  const { data: profile, error } = await supabase
+    .from("profiles" as any)
     .select("*")
     .eq("id", user.id)
     .single();
 
-  if (error) return null;
+  if (error) {
+    throw new Error(error.message);
+  }
 
-  return data;
+  return profile as Profile;
 }
 
-export async function updateProfile(form: ProfileForm) {
-  const supabase = (await createServerSupabase()) as any;
+export async function updateProfile(params: {
+  username: string;
+  avatarUrl: string;
+  hobbies: string;
+  interests: string;
+}) {
+  const supabase = await createServerSupabaseForActions();
 
   const {
     data: { user },
     error: userError,
   } = await supabase.auth.getUser();
 
-
   if (userError || !user) {
-    throw new Error("Nav pieteicies");
+    console.error("Nav pieteicies");
+    return;
   }
 
-  const hobbiesArray = form.hobbies
+  const hobbiesArray = params.hobbies
     .split(",")
-    .map((s) => s.trim())
+    .map((h) => h.trim())
     .filter(Boolean);
 
-  const interestsArray = form.interests
+  const interestsArray = params.interests
     .split(",")
-    .map((s) => s.trim())
+    .map((i) => i.trim())
     .filter(Boolean);
 
   const { error } = await supabase
-    .from("profiles")
-    .update({
-      username: form.username,
-      avatar_url: form.avatarUrl.trim() || null,
+    .from("profiles" as any)
+    .upsert({
+      id: user.id,
+      username: params.username || null,
+      avatar_url: params.avatarUrl || null,
       hobbies: hobbiesArray,
       interests: interestsArray,
-    })
-    .eq("id", user.id);
+    } as any);
 
   if (error) {
     throw new Error(error.message);
   }
+
+  redirect("/"); 
 }

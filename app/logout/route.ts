@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { createServerSupabase } from "@/lib/supabase/server";
+import { createServerSupabaseForActions } from "@/lib/supabase/server-actions";
 
 export async function POST() {
-  const supabase = createServerSupabase();
+  const supabase = await createServerSupabaseForActions();
+
   await supabase.auth.signOut();
 
   const baseUrl =
