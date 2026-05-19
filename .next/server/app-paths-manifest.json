@@ -1,11 +1,7 @@
 {
-  "/logout/route": "app/logout/route.js",
-  "/profile/page": "app/profile/page.js",
   "/page": "app/page.js",
-  "/friends/page": "app/friends/page.js",
-  "/gifts/[id]/page": "app/gifts/[id]/page.js",
   "/gifts/page": "app/gifts/page.js",
-  "/ideas/page": "app/ideas/page.js",
   "/wishlist/page": "app/wishlist/page.js",
-  "/login/page": "app/login/page.js"
+  "/gifts/[id]/page": "app/gifts/[id]/page.js",
+  "/ideas/page": "app/ideas/page.js"
 }
