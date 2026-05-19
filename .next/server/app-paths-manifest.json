@@ -1,11 +1,9 @@
 {
-  "/logout/route": "app/logout/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/gifts/page": "app/gifts/page.js",
-  "/wishlist/page": "app/wishlist/page.js",
-  "/gifts/[id]/page": "app/gifts/[id]/page.js",
   "/ideas/page": "app/ideas/page.js",
-  "/friends/page": "app/friends/page.js",
-  "/register/page": "app/register/page.js",
-  "/login/page": "app/login/page.js"
+  "/wishlist/page": "app/wishlist/page.js",
+  "/login/page": "app/login/page.js",
+  "/gifts/page": "app/gifts/page.js",
+  "/gifts/[id]/page": "app/gifts/[id]/page.js"
 }
