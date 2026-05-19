@@ -3,16 +3,17 @@ import { requireAuth } from "@/lib/auth";
 import { addToWishlist } from "./actions";
 
 type PageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function GiftDetailsPage({ params }: PageProps) {
+  const { id } = await params;
   const supabase = await createServerSupabase();
 
   const { data, error } = await supabase
     .from("gifts" as any)
     .select("*")
-    .eq("id", Number(params.id))
+    .eq("id", Number(id))
     .single();
 
   if (error || !data) {
@@ -20,14 +21,12 @@ export default async function GiftDetailsPage({ params }: PageProps) {
   }
 
   const gift = data as any;
-
   const user = await requireAuth().catch(() => null);
 
   return (
     <main className="mx-auto max-w-4xl py-6">
       <section className="rounded-2xl border bg-white shadow-sm">
         <div className="flex flex-col gap-6 p-4 md:flex-row md:p-6">
-          {/* Картинка слева */}
           <div className="md:w-2/5">
             <div className="relative h-56 w-full overflow-hidden rounded-xl md:h-64">
               <img
@@ -38,7 +37,6 @@ export default async function GiftDetailsPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Текст и кнопки справа */}
           <div className="flex flex-1 flex-col justify-between gap-4">
             <div>
               <h1 className="text-xl font-bold text-slate-900 md:text-2xl">

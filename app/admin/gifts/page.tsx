@@ -4,12 +4,14 @@ import { createGift, deleteGift } from "./actions";
 
 export default async function AdminGiftsPage() {
   await requireRole(["admin"]);
-  const supabase = createServerSupabase();
+
+  const supabase = await createServerSupabase();
+
   const { data: gifts } = await supabase
-    .from("gifts")
+    .from("gifts" as any)
     .select("*")
     .order("created_at", {
-      ascending: false
+      ascending: false,
     });
 
   const list = (gifts ?? []) as {
@@ -22,14 +24,16 @@ export default async function AdminGiftsPage() {
     <main className="space-y-4">
       <h1 className="text-2xl font-bold">Dāvanu pārvaldība</h1>
 
-      <form action={createGift} className="card space-y-2 max-w-lg">
+      <form action={createGift} className="card max-w-lg space-y-2">
         <h2 className="font-semibold">Pievienot dāvanu</h2>
+
         <input
           name="title"
           className="input"
           placeholder="Nosaukums"
           required
         />
+
         <input
           name="price"
           type="number"
@@ -38,12 +42,14 @@ export default async function AdminGiftsPage() {
           placeholder="Cena"
           required
         />
+
         <textarea
           name="description"
           className="input"
           placeholder="Apraksts"
           rows={3}
         />
+
         <button className="btn-primary" type="submit">
           Saglabāt
         </button>
@@ -51,8 +57,9 @@ export default async function AdminGiftsPage() {
 
       <section className="card space-y-2">
         <h2 className="font-semibold">Esošās dāvanas</h2>
+
         <ul className="space-y-1 text-sm">
-          {list.map(g => (
+          {list.map((g) => (
             <li
               key={g.id}
               className="flex items-center justify-between"
@@ -60,6 +67,7 @@ export default async function AdminGiftsPage() {
               <span>
                 {g.title} – {g.price.toFixed(2)} €
               </span>
+
               <form action={deleteGift}>
                 <input type="hidden" name="id" value={g.id} />
                 <button className="text-red-600" type="submit">
